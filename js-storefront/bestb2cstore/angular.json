@@ -32,7 +32,8 @@
                 "glob": "**/*",
                 "input": "./node_modules/@spartacus/smartedit/assets",
                 "output": "assets/"
-              }
+              },
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.scss",
@@ -49,20 +50,22 @@
               "includePaths": [
                 "node_modules/"
               ]
-            }
+            },
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "2.5mb"
+                  "maximumWarning": "2.5mb",
+                  "maximumError": "6mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "5kb",
+                  "maximumError": "10kb"
                 }
               ],
               "outputHashing": "all"
@@ -112,7 +115,8 @@
                 "glob": "**/*",
                 "input": "./node_modules/@spartacus/smartedit/assets",
                 "output": "assets/"
-              }
+              },
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.scss",

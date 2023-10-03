@@ -8,6 +8,7 @@ import {
   SiteContextConfig,
 } from '@spartacus/core';
 import {
+  PWAModuleConfig,
   defaultCmsContentProviders,
   layoutConfig,
   mediaConfig,
@@ -28,14 +29,13 @@ import { environment } from 'src/environments/environment.prod';
           prefix: environment.prefix,
         },
       },
+    }),
+    provideConfig(<SiteContextConfig>{
       context: {
         urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: ['apparel-uk-spa'],
         currency: ['GBP'],
       },
-    }),
-    provideConfig(<SiteContextConfig>{
-      context: {},
     }),
     provideConfig(<I18nConfig>{
       i18n: {
@@ -47,6 +47,12 @@ import { environment } from 'src/environments/environment.prod';
     provideConfig(<FeaturesConfig>{
       features: {
         level: '6.4',
+      },
+    }),
+    provideConfig(<PWAModuleConfig>{
+      pwa: {
+        enabled: true,
+        addToHomeScreen: true,
       },
     }),
   ],
