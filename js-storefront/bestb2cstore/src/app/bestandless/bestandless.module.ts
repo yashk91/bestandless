@@ -1,10 +1,8 @@
-import { NgModule } from "@angular/core";
-import { BestAndLessFeatures } from "./bestandless-features.module";
-
+import { NgModule } from '@angular/core';
+import { BestAndLessFeaturesModule } from './bestandless-features.module';
+import { BestAndLessCoreModule } from './bestandless-core.module';
 
 @NgModule({
-    imports:[
-        BestAndLessFeatures
-    ]
+  imports: [BestAndLessFeaturesModule, BestAndLessCoreModule],
 })
-export class BestAndLessModule{}
+export class BestAndLessModule {}

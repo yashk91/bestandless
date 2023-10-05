@@ -36,6 +36,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "src/styles/spartacus/user.scss",
               "src/styles/spartacus/cart.scss",
@@ -119,6 +120,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "src/styles/spartacus/user.scss",
               "src/styles/spartacus/cart.scss",

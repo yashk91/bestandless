@@ -1,0 +1,100 @@
+<ng-container *ngIf="data.loggedIn; else login">
+  <div class="top-section">
+    <span class="vector"></span>
+    <span class="login-label">MANAGE NOTIFICATIONS</span>
+    <span class="login-sub-label"
+      >Get notifed when this product is available again.</span
+    >
+  </div>
+  <form (ngSubmit)="onNotificationSubscription()" [formGroup]="notficationForm">
+    <div class="email__notification">
+      <span class="email__label">Email Notifications</span>
+      <div class="email__toggle">
+        <mat-slide-toggle
+          formControlName="emailNotification"
+        ></mat-slide-toggle>
+      </div>
+    </div>
+    <div class="line___separator"></div>
+    <div class="sms__notification">
+      <label class="sms__label">SMS Notifications</label>
+      <span class="sms__sub__label"
+        >Please enter your Mobile Number to receive notifications via SMS:
+      </span>
+      <fieldset>
+        <legend>Mobile Number</legend>
+        <input
+          required="true"
+          class="mobile__number"
+          type="number"
+          formControlName="mobileNumber"
+        />
+      </fieldset>
+      <mat-error style="margin: 15px;" *ngIf="showInvalidMobile">Number is not valid</mat-error>
+    </div>
+    <div class="notify__btn__wrapper">
+      <button
+        type="submit"
+        [disabled]="form.disabled"
+        class="btn btn-primary notify__me__btn"
+      >
+        Notify Me
+      </button>
+    </div>
+  </form>
+</ng-container>
+
+<ng-template #login>
+  <div class="container">
+    <div class="top-section">
+      <span class="vector"></span>
+      <span class="login-label">LOG IN</span>
+      <span class="login-sub-label"
+        >Log in to get notified when this product is available.</span
+      >
+    </div>
+    <section class="login-section">
+      <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <input
+          required="true"
+          type="email"
+          class="form-control login-email"
+          formControlName="userId"
+          placeholder="Email*"
+        />
+        <cx-form-errors [control]="form.get('userId')"></cx-form-errors>
+        <input
+          required="true"
+          type="password"
+          class="form-control login-password"
+          placeholder="Password*"
+          formControlName="password"
+          [attr.aria-label]="'loginForm.password.placeholder' | cxTranslate"
+          cxPasswordVisibilitySwitch
+        />
+        <cx-form-errors [control]="form.get('password')"></cx-form-errors>
+        <div class="login__submit__wrapper">
+          <a
+            (click)="navigate('/login/forgot-password')"
+            class="forgot-password-link"
+          >
+            FORGOT PASSWORD?
+          </a>
+          <button type="submit" class="btn btn-primary login-btn">
+            Log In
+          </button>
+        </div>
+      </form>
+      <div class="registration">
+        <span class="reg-label"> Dont have an account? </span>
+        <a
+          style="display: contents"
+          (click)="navigate('/login/register')"
+          class="sign-up"
+        >
+          SIGN Up
+        </a>
+      </div>
+    </section>
+  </div>
+</ng-template>
