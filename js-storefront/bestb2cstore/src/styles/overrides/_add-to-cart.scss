@@ -1,36 +1,42 @@
 cx-add-to-cart {
   .notify-me-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 3em;
+    display: none;
   }
-  .notify-me-btn {
-    outline: none;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-family: inherit;
-    color:  #FFFFFF;
-    transition: filter 0.3s ease;
-    width: 358px;
-    height: 48px;
-    padding: 12px, 82px, 12px, 82px;
-    border-radius: 12px;
-    gap: 10px;
-    background: #333741;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 19px;
-    letter-spacing: 0em;
-    text-align: left;
 
-    &:hover {
-      color: #ffffff;
+  @media screen and (max-width: 780px) {
+    .notify-me-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 3em;
+    }
+    .notify-me-btn {
       outline: none;
       border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-family: inherit;
+      color: #ffffff;
+      transition: filter 0.3s ease;
+      width: 358px;
+      height: 48px;
+      padding: 12px, 82px, 12px, 82px;
+      border-radius: 12px;
+      gap: 10px;
+      background: #333741;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 19px;
+      letter-spacing: 0em;
+      text-align: left;
+
+      &:hover {
+        color: #ffffff;
+        outline: none;
+        border: none;
+      }
     }
   }
 }
