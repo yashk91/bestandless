@@ -60,6 +60,7 @@ export class BestAndLessAddToCartComponent extends AddToCartComponent {
       panelClass: 'component-bottom-sheet',
       closeOnNavigation: true,
     });
+  
   }
 
   override ngOnInit(): void {
